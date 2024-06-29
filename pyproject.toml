@@ -10,10 +10,13 @@ packages = [{include = "combustible_bayes", from="src"}]
 python = "^3.12"
 numpyro = {extras = ["cpu"], version = "^0.15.0"}
 jax = {extras = ["cpu"], version = "^0.4.30"}
+arviz = "^0.18.0"
+matplotlib = "^3.9.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.0"
 pytest = "^8.2.2"
+ipykernel = "^6.29.4"
 
 [build-system]
 requires = ["poetry-core"]
