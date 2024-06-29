@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "combustible-bayes"
+version = "0.1.0"
+description = "An experiment with numpyro"
+authors = ["Jeremy Minton"]
+readme = "README.md"
+packages = [{include = "combustible_bayes", from="src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpyro = {extras = ["cpu"], version = "^0.15.0"}
+jax = {extras = ["cpu"], version = "^0.4.30"}
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.0"
+pytest = "^8.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
