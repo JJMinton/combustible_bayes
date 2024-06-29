@@ -1,12 +1,8 @@
 FROM mcr.microsoft.com/devcontainers/python:1-3.12-bullseye as base
 
+# Install large dependencies
 RUN python -m pip install --upgrade pip
-
-# Install JAX
-RUN python -m pip install jax[cpu]
-
-# Install numpyro
-RUN python -m pip install numpyro[cpu]
+RUN python -m pip install poetry jax[cpu] numpyro[cpu] 
 
 # Install matplotlib
 RUN python -m pip install matplotlib

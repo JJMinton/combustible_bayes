@@ -9,6 +9,60 @@
 		"context": ".."
 	},
 
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.formatOnType": true,
+				"[python]": {
+					"editor.codeActionsOnSave": {
+						"source.fixAll": "explicit",
+						"source.organizeImports": "explicit"
+					},
+					"editor.defaultFormatter": "charliermarsh.ruff",
+					"editor.formatOnSave": true,
+					"editor.formatOnPaste": true
+				},
+				"python.venvPath": "/home/vscode/venv",
+				"python.sortImports.path": "/usr/local/bin/isort",
+				"python.testing.pytestArgs": [
+					"src/tagloc/tests"
+				],
+				"python.testing.unittestEnabled": false,
+				"python.testing.pytestEnabled": true,
+				"isort.path": [
+					"/home/vscode/venv/bin/isort"
+				],
+				"isort.args": [
+					"--profile",
+					"black"
+				],
+				"black-formatter.path": [
+					"/home/vscode/venv/bin/black"
+				],
+				"black-formatter.args": [
+					"--line-length",
+					"88",
+				],
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "/bin/bash"
+					}
+				},
+			},
+			"extensions": [
+				"charliermarsh.ruff",
+				"eamodio.gitlens",
+				"ms-toolsai.jupyter",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"GitHub.copilot",
+				"github.vscode-pull-request-github",
+			]
+		}
+	},
+
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
@@ -17,10 +71,11 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	//"postCreateCommand": "pip3 install --user -e dsp && pip3 install --user -e sps",
+	"postCreateCommand": "poetry install --all-extras"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "root"
+	// "remoteUser": "root"
 }
